@@ -8,7 +8,7 @@ Group:		Applications
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/dirmngr/%{name}-%{version}.tar.gz
 # Source0-md5:	cc99f7cdb90c8e4d32cac395ac0984af
 Patch0:		%{name}-info.patch
-BuildRequires:	libassuan-devel >= 0.6.2
+BuildRequires:	libassuan-devel >= 1:0.6.2
 BuildRequires:	libgcrypt-devel >= 1.1.90
 BuildRequires:	libgpg-error >= 0.6
 BuildRequires:	libksba-devel >= 0.9.1
