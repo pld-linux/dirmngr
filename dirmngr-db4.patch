@@ -1,0 +1,52 @@
+--- dirmngr-0.4.5/configure.ac.orig	2003-05-12 23:33:58.000000000 +0200
++++ dirmngr-0.4.5/configure.ac	2003-07-26 11:07:11.000000000 +0200
+@@ -271,11 +271,11 @@
+ # Checks for header files.
+ AC_HEADER_STDC
+ AC_CHECK_HEADERS([string.h])
+-AC_CHECK_HEADERS(db2/db.h,,[echo -e "You need Berkeley DB2 to build DirMngr.\nGet a copy from http://www.sleepycat.com/download.html"; exit 1;])
+-AC_HAVE_LIBRARY(db2,,[echo -e "You need Berkeley DB2 to build DirMngr.\nGet a copy from http://www.sleepycat.com/download.html"; exit 1;])
++AC_CHECK_HEADERS(db.h,,[echo -e "You need Berkeley DB to build DirMngr.\nGet a copy from http://www.sleepycat.com/download.html"; exit 1;])
++AC_HAVE_LIBRARY(db,,[echo -e "You need Berkeley DB to build DirMngr.\nGet a copy from http://www.sleepycat.com/download.html"; exit 1;])
+ 
+ # db2 seems to come in two variants with 3 and 4 parameters to cursor(), better check:
+-AC_TRY_COMPILE([#include <db2/db.h>],[  
++AC_TRY_COMPILE([#include <db.h>],[  
+     DB* dbf; 
+     DBC *cursorp; 
+     dbf->cursor( dbf, NULL, &cursorp, 0 )
+--- dirmngr-0.4.5/src/crlcache.h.orig	2003-02-23 01:28:26.000000000 +0100
++++ dirmngr-0.4.5/src/crlcache.h	2003-07-26 11:09:55.000000000 +0200
+@@ -23,9 +23,9 @@
+ 
+ #include <config.h>
+ #include "../jnlib/types.h"
+-#ifdef HAVE_DB2_DB_H
++#ifdef HAVE_DB_H
+ #include <limits.h>
+-#include <db2/db.h>
++#include <db.h>
+ #else
+ /* Error */
+ #endif
+--- dirmngr-0.4.5/src/crlcache.c.orig	2003-02-23 01:27:49.000000000 +0100
++++ dirmngr-0.4.5/src/crlcache.c	2003-07-26 11:17:00.000000000 +0200
+@@ -55,7 +55,18 @@
+ 
+ static int mydbopen( const char* file, DB** dbpp )
+ {
++#if (DB_VERSION_MAJOR >= 3)
++  int ret;
++  if ((ret = db_create(dbpp, NULL, 0)) != 0)
++    return ret;
++#  if (DB_VERSION_MAJOR == 4) && (DB_VERSION_MINOR >= 1)
++  return (*dbpp)->open(*dbpp, NULL, file, NULL, DB_HASH, DB_CREATE, S_IRUSR|S_IWUSR);
++#  else /* db 3.0 .. 4.0 */
++  return (*dbpp)->open(*dbpp, file, NULL, DB_HASH, DB_CREATE, S_IRUSR|S_IWUSR);
++#  endif
++#else
+   return db_open( file, DB_HASH, DB_CREATE, S_IRUSR|S_IWUSR, NULL, NULL, dbpp );
++#endif
+ }
+ 
+ static int mydbclose( DB* dbp )
