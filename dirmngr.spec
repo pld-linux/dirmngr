@@ -5,7 +5,7 @@ Version:	0.5.0
 Release:	1
 License:	GPL
 Group:		Applications
-Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/aegypten/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/dirmngr/%{name}-%{version}.tar.gz
 # Source0-md5:	50aef24deaca95258a90da0a8edff5fa
 Patch0:		%{name}-db4.patch
 Patch1:		%{name}-info.patch
