@@ -1,14 +1,16 @@
---- dirmngr-0.5.3/doc/dirmngr.texi.orig	2004-04-06 17:57:28.000000000 +0200
-+++ dirmngr-0.5.3/doc/dirmngr.texi	2004-04-17 23:34:51.048545928 +0200
-@@ -63,9 +63,9 @@
+--- dirmngr-0.9.0/doc/dirmngr.texi.orig	2004-12-13 15:25:00.000000000 +0100
++++ dirmngr-0.9.0/doc/dirmngr.texi	2005-01-03 17:06:20.979959424 +0100
+@@ -63,10 +63,10 @@
  @c %**end of header
  
  @ifnottex
 -@dircategory GNU Utilities
 +@dircategory Miscellaneous:
  @direntry
--* dirmngr: (gnupg). X.509 CRL and OCSP server.
+-* dirmngr: (gnupg).        X.509 CRL and OCSP server.
+-* dirmngr-client: (gnupg). X.509 CRL and OCSP client.
 +* dirmngr: (dirmngr).			X.509 CRL and OCSP server
++* dirmngr-client: (dirmngr).		X.509 CRL and OCSP client
  @end direntry
  This file documents the use of dirmngr.
  
