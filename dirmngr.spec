@@ -8,10 +8,11 @@ Group:		Applications
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/dirmngr/%{name}-%{version}.tar.gz
 # Source0-md5:	05ba1c4eb6f50f8a053ce67253becc1b
 Patch0:		%{name}-info.patch
+BuildRequires:	automake
 BuildRequires:	libassuan-devel >= 1:0.6.2
-BuildRequires:	libgcrypt-devel >= 1.1.93
-BuildRequires:	libgpg-error >= 0.6
-BuildRequires:	libksba-devel >= 0.9.4
+BuildRequires:	libgcrypt-devel >= 1.1.94
+BuildRequires:	libgpg-error >= 0.7
+BuildRequires:	libksba-devel >= 0.9.5
 BuildRequires:	openldap-devel
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -33,6 +34,7 @@ wywo³ywany przez gpgsm i nie u¿ywany bezpo¶rednio.
 %patch0 -p1
 
 %build
+cp -f /usr/share/automake/config.* .
 %configure
 %{__make}
 
