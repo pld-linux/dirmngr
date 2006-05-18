@@ -1,5 +1,5 @@
---- dirmngr-0.9.1/doc/dirmngr.texi.orig	2005-01-21 18:58:04.000000000 +0100
-+++ dirmngr-0.9.1/doc/dirmngr.texi	2005-02-28 08:07:59.938319416 +0100
+--- dirmngr-0.9.4/doc/dirmngr.texi.orig	2005-10-26 16:04:08.000000000 +0200
++++ dirmngr-0.9.4/doc/dirmngr.texi	2006-05-18 11:32:41.323699000 +0200
 @@ -30,10 +30,10 @@
  @end quotation
  @end copying
@@ -7,8 +7,8 @@
 -@dircategory GNU Utilities
 +@dircategory Miscellaneous:
  @direntry
--* dirmngr: (gnupg).        X.509 CRL and OCSP server.
--* dirmngr-client: (gnupg). X.509 CRL and OCSP client.
+-* dirmngr: (dirmngr).        X.509 CRL and OCSP server.
+-* dirmngr-client: (dirmngr). X.509 CRL and OCSP client.
 +* dirmngr: (dirmngr).			X.509 CRL and OCSP server
 +* dirmngr-client: (dirmngr).		X.509 CRL and OCSP client
  @end direntry
