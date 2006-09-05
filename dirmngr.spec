@@ -68,3 +68,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/dirmngr-client
 %attr(755,root,root) %{_libexecdir}/dirmngr_ldap
 %{_infodir}/dirmngr.info*
+%{_mandir}/man1/dirmngr.1*
+%{_mandir}/man1/dirmngr-client.1*
