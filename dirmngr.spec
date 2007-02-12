@@ -1,5 +1,5 @@
 Summary:	X509/LDAP certificate and revocation list client
-Summary(pl):	Klient certyfikatów i list anuluj±cych X509/LDAP
+Summary(pl.UTF-8):   Klient certyfikatÃ³w i list anulujÄ…cych X509/LDAP
 Name:		dirmngr
 Version:	1.0.0
 Release:	1
@@ -28,11 +28,11 @@ revocation lists (CRLs) for X509 certificates and for downloading the
 certificates themselves. DirMngr is usually invoked by gpgsm and in
 general not used directly.
 
-%description -l pl
-DirMngr to klient do zarz±dzania i pobierania list anuluj±cych
-certyfikaty (CRLs - certificate revocation lists) dla certyfikatów
-X509 oraz do pobierania samych certyfikatów. DirMngr jest zwykle
-wywo³ywany przez gpgsm i nie u¿ywany bezpo¶rednio.
+%description -l pl.UTF-8
+DirMngr to klient do zarzÄ…dzania i pobierania list anulujÄ…cych
+certyfikaty (CRLs - certificate revocation lists) dla certyfikatÃ³w
+X509 oraz do pobierania samych certyfikatÃ³w. DirMngr jest zwykle
+wywoÅ‚ywany przez gpgsm i nie uÅ¼ywany bezpoÅ›rednio.
 
 %prep
 %setup -q
