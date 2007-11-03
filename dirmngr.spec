@@ -14,7 +14,7 @@ BuildRequires:	libassuan-devel >= 1:0.9.3
 BuildRequires:	libgcrypt-devel >= 1.2.0
 BuildRequires:	libgpg-error-devel >= 1.4
 BuildRequires:	libksba-devel >= 1.0.0
-BuildRequires:	openldap-devel >= 2.3.0
+BuildRequires:	openldap-devel >= 2.4.6
 BuildRequires:	pth-devel >= 1.3.7
 BuildRequires:	texinfo
 Requires:	libassuan >= 1:0.9.3
