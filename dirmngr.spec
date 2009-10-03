@@ -1,26 +1,26 @@
 Summary:	X509/LDAP certificate and revocation list client
 Summary(pl.UTF-8):	Klient certyfikatów i list anulujących X509/LDAP
 Name:		dirmngr
-Version:	1.0.2
+Version:	1.0.3
 Release:	1
 License:	GPL v2+
 Group:		Applications
 Source0:	ftp://ftp.gnupg.org/gcrypt/dirmngr/%{name}-%{version}.tar.bz2
-# Source0-md5:	88d62a348903009cbc96212e4684c89c
+# Source0-md5:	c1f2028d708e4d4ecbd6d6d647bd938b
 Patch0:		%{name}-info.patch
 URL:		http://www.gnupg.org/documentation/manuals/dirmngr/
 BuildRequires:	automake
-BuildRequires:	libassuan-devel >= 1:0.9.3
-BuildRequires:	libgcrypt-devel >= 1.2.0
+BuildRequires:	libassuan-devel >= 1:1.0.4
+BuildRequires:	libgcrypt-devel >= 1.4.0
 BuildRequires:	libgpg-error-devel >= 1.4
-BuildRequires:	libksba-devel >= 1.0.0
+BuildRequires:	libksba-devel >= 1.0.2
 BuildRequires:	openldap-devel >= 2.4.6
 BuildRequires:	pth-devel >= 1.3.7
 BuildRequires:	texinfo
-Requires:	libassuan >= 1:0.9.3
-Requires:	libgcrypt >= 1.2.0
+Requires:	libassuan >= 1:1.0.4
+Requires:	libgcrypt >= 1.4.0
 Requires:	libgpg-error >= 1.4
-Requires:	libksba >= 1.0.0
+Requires:	libksba >= 1.0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -51,15 +51,18 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/dirmngr
+rm -f $RPM_BUILD_ROOT%{_infodir}/dir
+
 %find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files -f %{name}.lang
