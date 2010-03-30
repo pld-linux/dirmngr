@@ -2,7 +2,7 @@ Summary:	X509/LDAP certificate and revocation list client
 Summary(pl.UTF-8):	Klient certyfikatów i list anulujących X509/LDAP
 Name:		dirmngr
 Version:	1.0.3
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Applications
 Source0:	ftp://ftp.gnupg.org/gcrypt/dirmngr/%{name}-%{version}.tar.bz2
@@ -17,7 +17,7 @@ BuildRequires:	libksba-devel >= 1.0.2
 BuildRequires:	openldap-devel >= 2.4.6
 BuildRequires:	pth-devel >= 1.3.7
 BuildRequires:	texinfo
-Requires:	libassuan >= 1:1.0.4
+Requires:	libassuan1 >= 1.0.5-2
 Requires:	libgcrypt >= 1.4.0
 Requires:	libgpg-error >= 1.4
 Requires:	libksba >= 1.0.2
