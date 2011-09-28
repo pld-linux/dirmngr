@@ -1,0 +1,11 @@
+--- dirmngr-1.1.0/src/Makefile.am.orig	2011-09-26 17:20:24.195406410 +0200
++++ dirmngr-1.1.0/src/Makefile.am	2011-09-26 17:22:43.666427455 +0200
+@@ -61,7 +61,7 @@ dirmngr_ldap_SOURCES = dirmngr_ldap.c i1
+ dirmngr_ldap_CFLAGS = $(GPG_ERROR_CFLAGS)
+ dirmngr_ldap_LDFLAGS =
+ dirmngr_ldap_LDADD = $(ldap_ldadd) ../jnlib/libjnlib.a $(LIBOBJS) \
+-		     $(GPG_ERROR_LIBS) $(LDAPLIBS) $(LIBINTL) $(LIBICONV)
++		     $(GPG_ERROR_LIBS) $(LDAPLIBS) -llber $(LIBINTL) $(LIBICONV)
+ 
+ dirmngr_client_SOURCES = dirmngr-client.c i18n.h util.h b64enc.c \
+                          get-path.c no-libgcrypt.c no-libgcrypt.h 

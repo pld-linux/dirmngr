@@ -8,6 +8,7 @@ Group:		Applications
 Source0:	ftp://ftp.gnupg.org/gcrypt/dirmngr/%{name}-%{version}.tar.bz2
 # Source0-md5:	f2570f0248f5947daac200e85291b328
 Patch0:		%{name}-info.patch
+Patch1:		build.patch
 URL:		http://www.gnupg.org/documentation/manuals/dirmngr/
 BuildRequires:	automake
 BuildRequires:	libassuan-devel >= 1:2.0.0
@@ -38,9 +39,13 @@ wywoływany przez gpgsm i nie używany bezpośrednio.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.* .
+%{__aclocal} -I m4
+%{__automake}
+%{__autoconf}
 %configure \
 	--with-ldap=/usr
 %{__make}
