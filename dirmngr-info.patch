@@ -14,3 +14,14 @@
  @end direntry
  
  @c
+--- dirmngr-1.1.1/doc/gpl.texi~	2010-06-08 19:48:47.000000000 +0200
++++ dirmngr-1.1.1/doc/gpl.texi	2014-01-02 13:45:23.372818385 +0100
+@@ -12,7 +12,7 @@
+ of this license document, but changing it is not allowed.
+ @end display
+ 
+-@appendixsubsec Preamble
++@appendixsec Preamble
+ 
+   The licenses for most software are designed to take away your
+ freedom to share and change it.  By contrast, the GNU General Public
