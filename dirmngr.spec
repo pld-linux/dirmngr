@@ -9,6 +9,7 @@ Source0:	ftp://ftp.gnupg.org/gcrypt/dirmngr/%{name}-%{version}.tar.bz2
 # Source0-md5:	f5a40e93bcf07a94522579bfd58a2c96
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-am.patch
+Patch2:		%{name}-pth.patch
 URL:		http://www.gnupg.org/documentation/manuals/dirmngr/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9.3
@@ -41,6 +42,7 @@ wywoływany przez gpgsm i nie używany bezpośrednio.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p0
 
 %build
 %{__aclocal} -I m4
