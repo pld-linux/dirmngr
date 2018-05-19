@@ -1,3 +1,4 @@
+# NOTE: for dirmngr 2.x see gnupg2.spec
 Summary:	X509/LDAP certificate and revocation list client
 Summary(pl.UTF-8):	Klient certyfikatów i list anulujących X509/LDAP
 Name:		dirmngr
@@ -10,6 +11,7 @@ Source0:	ftp://ftp.gnupg.org/gcrypt/dirmngr/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-am.patch
 Patch2:		%{name}-pth.patch
+Patch3:		%{name}-pl.po.patch
 URL:		http://www.gnupg.org/documentation/manuals/dirmngr/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9.3
@@ -43,6 +45,9 @@ wywoływany przez gpgsm i nie używany bezpośrednio.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p0
+%patch3 -p1
+
+%{__rm} po/stamp-po
 
 %build
 %{__aclocal} -I m4
