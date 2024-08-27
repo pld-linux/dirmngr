@@ -6,7 +6,7 @@ Version:	1.1.1
 Release:	5
 License:	GPL v2+
 Group:		Applications
-Source0:	ftp://ftp.gnupg.org/gcrypt/dirmngr/%{name}-%{version}.tar.bz2
+Source0:	https://www.gnupg.org/ftp/gcrypt/dirmngr/%{name}-%{version}.tar.bz2
 # Source0-md5:	f5a40e93bcf07a94522579bfd58a2c96
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-am.patch
